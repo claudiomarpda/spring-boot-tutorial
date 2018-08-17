@@ -1,10 +1,19 @@
 package com.example.springtutorial;
 
+import javax.persistence.*;
+
+@Entity
 class Avaliacao {
 
+    @Id
+    @GeneratedValue
     private long id;
+
     private int classificacao;
     private String comentario;
+
+    public Avaliacao() {
+    }
 
     public Avaliacao(long id, int classificacao, String comentario) {
         this.id = id;
@@ -15,9 +24,6 @@ class Avaliacao {
     public Avaliacao(int classificacao, String comentario) {
         this.classificacao = classificacao;
         this.comentario = comentario;
-    }
-
-    public Avaliacao() {
     }
 
     public long getId() {
