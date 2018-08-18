@@ -1,5 +1,6 @@
-package com.example.springtutorial;
+package com.example.springtutorial.repositorio;
 
+import com.example.springtutorial.modelo.Avaliacao;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

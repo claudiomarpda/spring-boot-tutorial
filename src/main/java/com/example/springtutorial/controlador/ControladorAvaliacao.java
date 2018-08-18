@@ -1,5 +1,8 @@
-package com.example.springtutorial;
+package com.example.springtutorial.controlador;
 
+import com.example.springtutorial.repositorio.RepositorioAvaliacao;
+import com.example.springtutorial.modelo.Avaliacao;
+import com.example.springtutorial.servico.ServicoAvaliacao;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

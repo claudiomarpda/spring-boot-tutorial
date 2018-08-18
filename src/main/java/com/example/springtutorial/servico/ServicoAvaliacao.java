@@ -1,4 +1,6 @@
-package com.example.springtutorial;
+package com.example.springtutorial.servico;
+
+import com.example.springtutorial.modelo.Avaliacao;
 
 import java.util.Optional;
 
