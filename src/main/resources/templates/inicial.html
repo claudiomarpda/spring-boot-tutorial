@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${mensagem}"> :) </h1>
+<div th:object="${avaliacao}">
+    <td th:text="${avaliacao.classificacao}"></td>
+    <td th:text="${avaliacao.comentario}"></td>
+</div>
+<table>
+    <tr th:each="avaliacao : ${avaliacoes}">
+        <td th:text="${avaliacao.classificacao}"></td>
+        <td th:text="${avaliacao.comentario}"></td>
+    </tr>
+</table>
+</body>
+</html>

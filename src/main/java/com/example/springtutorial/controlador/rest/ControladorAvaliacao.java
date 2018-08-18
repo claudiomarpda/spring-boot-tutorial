@@ -1,4 +1,4 @@
-package com.example.springtutorial.controlador;
+package com.example.springtutorial.controlador.rest;
 
 import com.example.springtutorial.repositorio.RepositorioAvaliacao;
 import com.example.springtutorial.modelo.Avaliacao;
