@@ -14,9 +14,9 @@ public class ControladorAvaliacao {
    private final RepositorioAvaliacao repositorioAvaliacao;
    private final ServicoAvaliacao servicoAvaliacao;
 
-    public ControladorAvaliacao(RepositorioAvaliacao repositorioAvaliacao, ServicoAvaliacao servicoAvaliacao) {
-        this.repositorioAvaliacao = repositorioAvaliacao;
-        this.servicoAvaliacao = servicoAvaliacao;
+    public ControladorAvaliacao(RepositorioAvaliacao ra, ServicoAvaliacao sa) {
+        this.repositorioAvaliacao = ra;
+        this.servicoAvaliacao = sa;
 
         // Salva avaliações e exibe no console
         repositorioAvaliacao.save(new Avaliacao(5, "Ótimo"));
@@ -25,34 +25,34 @@ public class ControladorAvaliacao {
         repositorioAvaliacao.findAll().forEach(System.out::println);
     }
 
-    @GetMapping("/estatica")
-    public Avaliacao encontrarAvaliacao() {
+    public @GetMapping
+    Avaliacao encontrar() {
         return new Avaliacao(5, "Ótimo");
     }
 
     @GetMapping("/{id}")
-    public Avaliacao encontrarAvaliacao(@PathVariable long id) {
+    public Avaliacao encontrar(@PathVariable long id) {
         return servicoAvaliacao.encontrarPorId(id).orElse(null);
     }
 
     @PostMapping
-    public void criarAvaliacao(@RequestBody Avaliacao avaliacao) {
+    public void criar(@RequestBody Avaliacao avaliacao) {
         System.out.println("Salvar avaliação \n" + avaliacao);
         repositorioAvaliacao.save(avaliacao);
     }
 
     @PutMapping("/{id}")
-    public void atualizarAvaliacao(@PathVariable long id, @RequestBody Avaliacao avaliacao) {
+    public void atualizar(@PathVariable long id, @RequestBody Avaliacao avaliacao) {
         System.out.println("Atualizar parcialmente avaliação com id " + id);
     }
 
     @DeleteMapping("/{id}")
-    public void deletarAvaliacao(@PathVariable long id) {
+    public void deletar(@PathVariable long id) {
         System.out.println("Deletar avaliação com id " + id);
     }
 
     @GetMapping(params = "classificacao")
-    Iterable<Avaliacao> encontrarPorClassificacao(@RequestParam int classificacao) {
+    public Iterable<Avaliacao> encontrarPorClassificacao(@RequestParam int classificacao) {
         return repositorioAvaliacao.findByClassificacaoEquals(classificacao);
     }
 
