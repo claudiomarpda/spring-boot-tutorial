@@ -3,7 +3,7 @@ package com.example.springtutorial;
 import javax.persistence.*;
 
 @Entity
-class Avaliacao {
+public class Avaliacao {
 
     @Id
     @GeneratedValue

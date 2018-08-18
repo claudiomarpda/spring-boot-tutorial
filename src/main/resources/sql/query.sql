@@ -1,1 +1,0 @@
-select * from Avaliacao where classificacao = param;

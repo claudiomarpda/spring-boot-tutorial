@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-interface RepositorioAvaliacao extends CrudRepository<Avaliacao, Long> {
+public interface RepositorioAvaliacao extends CrudRepository<Avaliacao, Long> {
 
     List<Avaliacao> findByClassificacaoEquals(int classificacao);
 

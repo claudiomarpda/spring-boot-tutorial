@@ -8,10 +8,12 @@ import java.util.List;
 @RequestMapping("/avaliacoes")
 public class ControladorAvaliacao {
 
-    final RepositorioAvaliacao repositorioAvaliacao;
+   private final RepositorioAvaliacao repositorioAvaliacao;
+   private final ServicoAvaliacao servicoAvaliacao;
 
-    ControladorAvaliacao(RepositorioAvaliacao repositorioAvaliacao) {
+    public ControladorAvaliacao(RepositorioAvaliacao repositorioAvaliacao, ServicoAvaliacao servicoAvaliacao) {
         this.repositorioAvaliacao = repositorioAvaliacao;
+        this.servicoAvaliacao = servicoAvaliacao;
 
         // Salva avaliações e exibe no console
         repositorioAvaliacao.save(new Avaliacao(5, "Ótimo"));
@@ -21,13 +23,13 @@ public class ControladorAvaliacao {
     }
 
     @GetMapping("/estatica")
-    public Avaliacao obterAvaliacao() {
+    public Avaliacao encontrarAvaliacao() {
         return new Avaliacao(5, "Ótimo");
     }
 
     @GetMapping("/{id}")
-    public Avaliacao obterAvaliacao(@PathVariable long id) {
-        return repositorioAvaliacao.findById(id).orElse(null);
+    public Avaliacao encontrarAvaliacao(@PathVariable long id) {
+        return servicoAvaliacao.encontrarPorId(id).orElse(null);
     }
 
     @PostMapping
