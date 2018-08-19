@@ -25,8 +25,8 @@ public class ControladorAvaliacao {
         repositorioAvaliacao.findAll().forEach(System.out::println);
     }
 
-    public @GetMapping
-    Avaliacao encontrar() {
+    @GetMapping
+    public Avaliacao encontrar() {
         return new Avaliacao(5, "Ótimo");
     }
 
