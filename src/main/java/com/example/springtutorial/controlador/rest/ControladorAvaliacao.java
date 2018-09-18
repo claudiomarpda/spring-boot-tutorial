@@ -1,7 +1,7 @@
 package com.example.springtutorial.controlador.rest;
 
-import com.example.springtutorial.repositorio.RepositorioAvaliacao;
 import com.example.springtutorial.modelo.Avaliacao;
+import com.example.springtutorial.repositorio.RepositorioAvaliacao;
 import com.example.springtutorial.servico.ServicoAvaliacao;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,8 +11,8 @@ import java.util.List;
 @RequestMapping("/avaliacoes")
 public class ControladorAvaliacao {
 
-   private final RepositorioAvaliacao repositorioAvaliacao;
-   private final ServicoAvaliacao servicoAvaliacao;
+    private final RepositorioAvaliacao repositorioAvaliacao;
+    private final ServicoAvaliacao servicoAvaliacao;
 
     public ControladorAvaliacao(RepositorioAvaliacao ra, ServicoAvaliacao sa) {
         this.repositorioAvaliacao = ra;
@@ -25,8 +25,8 @@ public class ControladorAvaliacao {
         repositorioAvaliacao.findAll().forEach(System.out::println);
     }
 
-    public @GetMapping
-    Avaliacao encontrar() {
+    @GetMapping
+    public Avaliacao encontrar() {
         return new Avaliacao(5, "Ótimo");
     }
 
