@@ -1,5 +1,7 @@
 = Spring Boot Tutorial
 
+=== Código do link:http://portaldeconteudo.sbc.org.br/index.php/minicursoswebmedia[minicurso] publicado no WebMedia 2018
+
 * *Spring Core*: Dependency Inversion
 * *Spring Web MVC*: Servlet API
 * *Spring Data JPA*: Data Access Object, Object Relational Mapping;
